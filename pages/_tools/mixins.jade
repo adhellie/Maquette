@@ -1,0 +1,9 @@
+mixin product(picture, price, estate, shipping)
+  li.item
+    a(href="")
+      img(src=picture)
+
+      div.price-infos
+        p.price!= price
+          span!= estate
+        p.shipping!= shipping

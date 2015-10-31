@@ -1,0 +1,29 @@
+include ../_tools/mixins
+block vars
+
+doctype 
+html(lang="fr")
+  head
+    meta(charset="utf-8")
+    title Titre
+
+    //-Modernizer
+    //- script(src="js/modernizer.js") pas encore ajouté au process
+
+    //- possibilité de créer une variable pour le début du chemin dans un fichier yaml : css/ -> #{url.css}
+    link(rel="stylesheet" href="#{url.css}styles.css") 
+  //- pageType à déclarer en haut des pages pour créer des templates dérivé
+  body(class="page") 
+  
+    block header
+      //- include ../_modules/header pas encore défini
+    div.main(role="main")
+      block content
+
+    block footer
+      //- include ../_modules/footer pas encore défini
+    block scripts
+      include ../_modules/scripts 
+  
+
+

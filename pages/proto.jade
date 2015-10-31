@@ -1,0 +1,42 @@
+extends _layout/layout
+
+block vars
+  - var pageType ='page'
+
+block content
+  include _modules/header
+  div.wrapper
+    ul.list-product
+      each val in product.list
+        +product(val.profile,val.price,val.estate, val.shipping)
+      li.item-more
+        a(href="#") Voir plus d'annonces
+
+    div.content
+      article
+        header
+          h1!= product.name
+          p!= product.detail
+          div.rating
+            span.grade
+              span.stars
+              span(property="ratingValue")!= product.list.product1.note
+              span /5
+            span 
+              a(href="#") 138 commentaires
+
+        div.product-infos
+          img(src= product.list.product1.visual alt="")
+          p!= product.list.product1.price
+
+        footer
+          h2 Commentaire vendeur
+          p!= product.list.product1.desc
+      footer
+        ul
+          li
+            p Paiement garantie
+          li
+            p Mise en vente gratuite
+          li
+            p Service client

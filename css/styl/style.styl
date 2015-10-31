@@ -1,0 +1,58 @@
+.content 
+  float right
+  width 61%
+
+//Products list
+
+.list-product
+  background-color: $white
+  border-radius: 5px
+  float left
+  margin 0
+  padding 0
+  width 32%
+
+li[class^="item"]
+  border-bottom : 1px solid $grey3
+  list-style none
+  padding 14px
+  
+  a 
+    display block
+    text-decoration none
+  
+  img
+    border-radius 50px
+    display inline-block
+    height 43px
+    margin-right 17px
+    vertical-align middle
+    width @height
+  
+  p
+    margin 0
+    color $grey2
+    
+  .price-infos
+    display inline-block
+    vertical-align middle
+  
+  .price
+    font-weight bold
+    margin-bottom 3px
+    span
+      font-weight normal
+      &:before
+        content " - "
+      
+  .shipping
+    color $grey4
+
+.item-more
+  // border: none
+  text-align center
+  
+  a
+    color blue
+    padding 12px
+    

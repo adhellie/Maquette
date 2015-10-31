@@ -1,0 +1,63 @@
+//Style header 
+.header
+  background-color $white
+  box-shadow 0px 2px 2px 0px #cfcfcf
+  
+.container
+  box-sizing border-box
+  clearfix()
+  margin 0 auto
+  width 900px
+  padding 15px 36px 18px 24px
+  
+.hide
+  hide()
+
+.tt-1
+  float left
+  margin 0 10px 0 0
+  vertical-align middle
+  
+.form
+  float right
+  margin-left 10px
+  vertical-align middle
+  position relative
+  width 76%
+  .search
+    width 100%
+    &:after
+      content ""
+      background-color $orange
+      border-bottom-right-radius 5px
+      border-top-right-radius 5px
+      position absolute
+      right 0
+      top 0
+      width 62px
+      height: 100%
+      z-index 1
+      
+  .text-input
+    background-color white
+    border-radius 5px
+    box-sizing border-box
+    border 1px solid $grey1
+    color $grey1
+    
+    padding 16px 82px 16px 14px
+    width 100%
+
+    &::placeholder
+      font-weight 200 
+      
+    
+  .btn-search
+    border none
+    background url(../medias/img/search.png) no-repeat 50% 50%
+    position absolute
+    right 0
+    top 0
+    width 62px
+    height: 100%
+    z-index 2
