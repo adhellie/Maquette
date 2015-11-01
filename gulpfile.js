@@ -34,6 +34,11 @@ gulp.task('fonts', function() {
   .pipe(gulp.dest('build/medias/fonts'))
 })
 
+gulp.task('locals', function() {
+  return gulp.src('locals/**/*')
+  .pipe(gulp.dest('build/locals'))
+})
+
 //Scripts Task
 // Uglifies and browserify
 gulp.task('scripts', function() {
@@ -74,7 +79,8 @@ gulp.task('build', function(callback) {
     'scripts',
     'one',
     'images',
-    'fonts'
+    'fonts',
+    'locals'
   ],
   callback);
 });
@@ -100,7 +106,7 @@ gulp.task('watch', ['browserSync', 'one', 'templates', 'scripts'], function() {
   gulp.watch('js/**/*.js', ['scripts']); //regarde tous les fichiers ayant l'extenssion .js dans le dossier js
   gulp.watch('css/**/*.styl', ['one']);
   gulp.watch('pages/**/*.jade', ['templates']);
-  gulp.watch('locals/**/*.json', ['templates']);
+  gulp.watch('locals/**/*.json', ['templates','locals']);
   gulp.watch('medias/img/**/*', ['images']);
 });
 
@@ -115,7 +121,7 @@ gulp.task('delete', function() {
 gulp.task('templates', function() {
 
  
-  gulp.src('pages/**/*.jade')
+  gulp.src('pages/*.jade')
     .pipe(jade({
       locals: yaml.safeLoad(fs.readFileSync('locals/datas.json', 'utf8')),
       pretty: true

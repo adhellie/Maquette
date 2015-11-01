@@ -13,11 +13,36 @@
   min-width 282px
   padding 0
   width 32%
+  
+li[class^="item"].active
+  background-color $blue1
+  transition background-color 0.2s 0.2s ease-out
+  
+  &:hover
+    background-color $blue1
+    transition background-color 0.2s ease-out
+    
+  p
+    color $white
+    transition color 0.2s 0.2s ease-out
+  
+  .shipping
+    color $blue2
+
+.item
+  a 
+    display block
+    padding 12px 13px
+    text-decoration none
 
 li[class^="item"]
   border-bottom 1px solid $grey3
   list-style none
-  padding 12px 13px
+  transition background-color 0.2s ease-out
+  
+  &:hover
+    background-color #eaf5fc
+    transition background-color 0.2s ease-out
   
   &:first-child
     border-top-left-radius 5px
@@ -26,10 +51,6 @@ li[class^="item"]
   &:last-child
     border-bottom-left-radius 5px
     border-bottom-right-radius 5px
-    
-  a 
-    display block
-    text-decoration none
   
   img
     border-radius 50px
@@ -63,8 +84,10 @@ li[class^="item"]
   text-align center
   
   a
-    color $blue
-    padding 12px
+    color $blue1
+    display block
+    padding 24px
+    text-decoration none
 
 //Product
 
@@ -80,6 +103,7 @@ li[class^="item"]
     left -20px
     position absolute
     top 30px
+    transition top 0.2s ease-out
     triangle( 20px, $white, left)
       
     
@@ -109,7 +133,7 @@ li[class^="item"]
     margin-left 2px
     
   a
-    color $blue
+    color $blue1
     text-decoration none
     
 .grade
@@ -154,3 +178,23 @@ li[class^="item"]
     
     .tt-2
       margin-bottom 9px
+
+.product.index2
+  &:before
+    top 90px
+
+.product.index3
+  &:before
+    top 160px
+
+.product.index4
+  &:before
+    top 230px
+
+.product.index5
+  &:before
+    top 295px
+
+.product.index6
+  &:before
+    top 365px
