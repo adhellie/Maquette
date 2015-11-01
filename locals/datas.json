@@ -18,10 +18,57 @@
       },
       "product2": {
         "id":2,
-        "profile": "../medias/img/profile1.jpg",
+        "profile": "../medias/img/profile2.jpg",
         "price": "22,49€",
         "estate": "Comme neuf",
-        "shipping": "+5,15 € de frais de port",
+        "shipping": "Livraison gratuite",
+        "note": 8,
+        "visual": "../medias/img/visual.jpg",
+        "desc": "NEUF - Envoyee par avion des USA sous 24 hrs - Livraison en moyenne de 7 a 14 jours ouvres - Tous les DVDs = Region 1 (USA/CA) - Excellent service clientele en francais - Achetez en toute confiance !"
+
+      },
+      "product3": {
+        "id":3,
+        "profile": "../medias/img/profile3.jpg",
+        "price": "31,97€",
+        "estate": "Comme neuf",
+        "shipping": "Livraison gratuite",
+        "note": 8,
+        "visual": "../medias/img/visual.jpg",
+        "desc": "NEUF - Envoyee par avion des USA sous 24 hrs - Livraison en moyenne de 7 a 14 jours ouvres - Tous les DVDs = Region 1 (USA/CA) - Excellent service clientele en francais - Achetez en toute confiance !"
+
+      },
+
+      "product4": {
+        "id":3,
+        "profile": "../medias/img/profile3.jpg",
+        "price": "17,34€",
+        "estate": "Comme neuf",
+        "shipping": "Livraison gratuite",
+        "note": 8,
+        "visual": "../medias/img/visual.jpg",
+        "desc": "NEUF - Envoyee par avion des USA sous 24 hrs - Livraison en moyenne de 7 a 14 jours ouvres - Tous les DVDs = Region 1 (USA/CA) - Excellent service clientele en francais - Achetez en toute confiance !"
+
+      },
+
+      "product5": {
+        "id":3,
+        "profile": "../medias/img/profile3.jpg",
+        "price": "22,49€",
+        "estate": "Comme neuf",
+        "shipping": "Livraison gratuite",
+        "note": 8,
+        "visual": "../medias/img/visual.jpg",
+        "desc": "NEUF - Envoyee par avion des USA sous 24 hrs - Livraison en moyenne de 7 a 14 jours ouvres - Tous les DVDs = Region 1 (USA/CA) - Excellent service clientele en francais - Achetez en toute confiance !"
+
+      },
+
+      "product6": {
+        "id":3,
+        "profile": "../medias/img/profile3.jpg",
+        "price": "17,34€",
+        "estate": "Comme neuf",
+        "shipping": "Livraison gratuite",
         "note": 8,
         "visual": "../medias/img/visual.jpg",
         "desc": "NEUF - Envoyee par avion des USA sous 24 hrs - Livraison en moyenne de 7 a 14 jours ouvres - Tous les DVDs = Region 1 (USA/CA) - Excellent service clientele en francais - Achetez en toute confiance !"
