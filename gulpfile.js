@@ -13,7 +13,8 @@ var autoprefixer = require('gulp-autoprefixer'),
   del = require('del'),
   stylus = require('gulp-stylus'),
   watch = require('gulp-watch'),
-  imagemin = require('gulp-imagemin');
+  imagemin = require('gulp-imagemin'),
+  minify = require('gulp-minify-css');
 
 // Définir le dossier build
 
@@ -47,7 +48,7 @@ gulp.task('scripts', function() {
     .pipe(browserify({
       nobuiltins: 'events querystring'
     }))
-    // .pipe(uglify()) //on minimise les fichiers chargés
+    .pipe(uglify()) //on minimise les fichiers chargés
     .pipe(gulp.dest('build/js')) //on range les nouveaux fichiers dans un nouveau répertoire.
     .pipe(browserSync.reload({
       stream: true
@@ -64,6 +65,7 @@ gulp.task('one', function () {
             cascade: false
         }))
         .pipe(sourcemaps.write('.'))
+    .pipe(minify({compatibility: 'ie8'}))
     .pipe(gulp.dest('build/css'))
     .pipe(browserSync.reload({
       stream: true
