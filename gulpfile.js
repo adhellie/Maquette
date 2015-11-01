@@ -100,6 +100,8 @@ gulp.task('watch', ['browserSync', 'one', 'templates', 'scripts'], function() {
   gulp.watch('js/**/*.js', ['scripts']); //regarde tous les fichiers ayant l'extenssion .js dans le dossier js
   gulp.watch('css/**/*.styl', ['one']);
   gulp.watch('pages/**/*.jade', ['templates']);
+  gulp.watch('locals/**/*.json', ['templates']);
+  gulp.watch('medias/img/**/*', ['images']);
 });
 
 //Delete
