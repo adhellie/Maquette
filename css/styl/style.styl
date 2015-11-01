@@ -7,23 +7,25 @@
 .list-product
   background-color: $white
   border-radius: 5px
+  box-shadow()
   float left
   margin 0
+  min-width 282px
   padding 0
   width 32%
 
 li[class^="item"]
-  border-bottom : 1px solid $grey3
+  border-bottom 1px solid $grey3
   list-style none
   padding 14px
   
   &:first-child
-    border-top-left-radius :5px
-    border-top-right-radius :5px
+    border-top-left-radius 5px
+    border-top-right-radius 5px
   
   &:last-child
-    border-bottom-left-radius :5px
-    border-bottom-right-radius :5px
+    border-bottom-left-radius 5px
+    border-bottom-right-radius 5px
     
   a 
     display block
@@ -63,4 +65,81 @@ li[class^="item"]
   a
     color blue
     padding 12px
+
+//Product
+
+.product
+  background-color: $white
+  border-radius: 5px
+  box-sizing border-box
+  padding 0 38px 0 5px 
+  
+//Product header
+
+.header-card
+  border-bottom 1px solid $grey3
+  padding 16px 20px 20px 20px
+  .tt-1
+    margin-bottom 2px
+  .detail
+    margin-bottom 4px 
+
+//rating
+.rating
+  margin-left -2px
+  .grade 
+    span
+      &:not([class])
+        hide()
+  
+  .comments
+    display inline-block
+    vertical-align middle
+    margin-left 2px
     
+  a
+    color $blue
+    text-decoration none
+    
+.grade
+  background url(../medias/img/star_grey.png)
+  display inline-block
+  height 15px
+  vertical-align top
+  width 96px
+
+.stars
+  background url(../medias/img/star_yellow.png)
+  display inline-block
+  height 15px
+  width 80%
+
+//Product card
+.product-infos
+  border-bottom 1px solid $grey3
+  box-sizing border-box
+  clearfix()
+  padding 18px 13px 26px 13px
+  width 100% 
+  
+  img
+    box-sizing border-box
+    float left
+    padding-right 20px
+    width 47%
+
+  .price-card
+    float left
+    margin-bottom 18px
+    width 52%
+    
+  .button
+    float left
+    width 52%
+
+//Product card
+  .footer-card
+    padding 20px 15px 30px 15px
+    
+    .tt-2
+      margin-bottom 9px

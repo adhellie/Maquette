@@ -13,25 +13,26 @@ block content
         a(href="#") Voir plus d'annonces
 
     div.content
-      article
-        header
-          h1!= product.name
-          p!= product.detail
+      article.product
+        header.header-card
+          h1.tt-1!= product.name
+          p.detail!= product.detail
           div.rating
             span.grade
               span.stars
               span(property="ratingValue")!= product.list.product1.note
               span /5
-            span 
+            span.comments
               a(href="#") 138 commentaires
 
         div.product-infos
-          div
-            img(src= product.list.product1.visual alt="")
-          p!= product.list.product1.price
+          img(src= product.list.product1.visual alt="")
+          p.price-card!= product.list.product1.price
+          div.button
+            button.bt-1 Ajouter au panier
 
-        footer
-          h2 Commentaire vendeur
+        footer.footer-card
+          h2.tt-2 Commentaire vendeur
           p!= product.list.product1.desc
       footer
         ul
