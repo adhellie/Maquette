@@ -4,7 +4,6 @@ block vars
   - var pageType ='page'
 
 block content
-  include _modules/header
   div.wrapper
     ul.list-product
       each val in product.list
@@ -34,11 +33,5 @@ block content
         footer.footer-card
           h2.tt-2 Commentaire vendeur
           p!= product.list.product1.desc
-      footer
-        ul
-          li
-            p Paiement garantie
-          li
-            p Mise en vente gratuite
-          li
-            p Service client
+
+      include _modules/footer

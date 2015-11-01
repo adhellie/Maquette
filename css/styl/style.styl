@@ -63,7 +63,7 @@ li[class^="item"]
   text-align center
   
   a
-    color blue
+    color $blue
     padding 12px
 
 //Product
@@ -71,8 +71,19 @@ li[class^="item"]
 .product
   background-color: $white
   border-radius: 5px
+  box-shadow()
   box-sizing border-box
-  padding 0 38px 0 5px 
+  padding 0 38px 0 5px
+  position relative
+  &:before
+    content ""
+    left -20px
+    position absolute
+    top 30px
+    triangle( 20px, $white, left)
+      
+    
+
   
 //Product header
 
