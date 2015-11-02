@@ -23,7 +23,7 @@ var Script = module.exports = function(){
       that = event.currentTarget.parentNode;
       //Nous récupérons l'index du 'li' cible dans la liste de 'li' initiale
       index = this.els.tabList.indexOf(that) + 1;
-      //Nous vérifions que l'élément contient bien la classe 'item', qu'il est bien une référence à un produits
+      //Nous vérifions que l'élément contient bien la classe 'item', qu'il est bien une référence à un produit
       if(that.classList.contains('item')){
         event.preventDefault();
         //on applique la classe 'active' au 'li' parent du 'a' cliqué afin de lui appliquer un style particulier
