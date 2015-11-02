@@ -1,11 +1,11 @@
 var autoprefixer = require('gulp-autoprefixer'),
   gulp = require('gulp'),
-  uglify = require('gulp-uglify'), //import du gulp node package, chaque fois qu'on appel la commande gulp le package est importé
+  uglify = require('gulp-uglify'),
   browserSync = require('browser-sync'),
   browserify = require('gulp-browserify'),
-  fs = require('fs'), //filesystem (jade)
+  fs = require('fs'), 
   jade = require('gulp-jade'),
-  yaml = require('js-yaml'), //jade
+  yaml = require('js-yaml'), 
   postcss      = require('gulp-postcss'),
   sass = require('gulp-sass'),
   sourcemaps   = require('gulp-sourcemaps'),
@@ -15,10 +15,6 @@ var autoprefixer = require('gulp-autoprefixer'),
   watch = require('gulp-watch'),
   imagemin = require('gulp-imagemin'),
   minify = require('gulp-minify-css');
-
-// Définir le dossier build
-
-
 
 //Tâches 
 
@@ -41,21 +37,19 @@ gulp.task('locals', function() {
 })
 
 //Scripts Task
-// Uglifies and browserify
 gulp.task('scripts', function() {
-  //On veut que pour tous les fichiers js soit appliqué la tâche uglify.
-  gulp.src('js/*.js') //on charge les fichiers
+  gulp.src('js/*.js')
     .pipe(browserify({
       nobuiltins: 'events querystring'
     }))
-    .pipe(uglify()) //on minimise les fichiers chargés
-    .pipe(gulp.dest('build/js')) //on range les nouveaux fichiers dans un nouveau répertoire.
+    .pipe(uglify())
+    .pipe(gulp.dest('build/js'))
     .pipe(browserSync.reload({
       stream: true
     }))
 });
 
-
+//Styles Task
 gulp.task('one', function () {
   return gulp.src('css/styles.styl')
     .pipe(stylus())
@@ -73,7 +67,6 @@ gulp.task('one', function () {
 });
 
 //Build
-
 gulp.task('build', function(callback) {
   runSequence('delete',
   [
@@ -104,25 +97,21 @@ gulp.task('browserSync', ['build'], function() {
 //Watch Task
 // Watches JS
 gulp.task('watch', ['browserSync', 'one', 'templates', 'scripts'], function() {
-  //On veut qu'a chaque modification d'un fichier cela soit repéré afin d'appliquer des tâches spécifiques.
-  gulp.watch('js/**/*.js', ['scripts']); //regarde tous les fichiers ayant l'extenssion .js dans le dossier js
+  gulp.watch('js/**/*.js', ['scripts']);
   gulp.watch('css/**/*.styl', ['one']);
   gulp.watch('pages/**/*.jade', ['templates']);
   gulp.watch('locals/**/*.json', ['templates','locals']);
   gulp.watch('medias/img/**/*', ['images']);
 });
 
-//Delete
 
+//Delete
 gulp.task('delete', function() {
   del('build');
 });
 
 //Jade
-
 gulp.task('templates', function() {
-
- 
   gulp.src('pages/*.jade')
     .pipe(jade({
       locals: yaml.safeLoad(fs.readFileSync('locals/datas.json', 'utf8')),
@@ -133,7 +122,6 @@ gulp.task('templates', function() {
       stream: true
     }))
 });
-
 
 
 gulp.task('default', ['watch']);
