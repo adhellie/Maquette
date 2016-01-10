@@ -61,23 +61,13 @@ gulp.task('one', function () {
         .pipe(sourcemaps.write('.'))
     .pipe(minify({compatibility: 'ie8'}))
     .pipe(gulp.dest('build/css'))
-    .pipe(browserSync.reload({
-      stream: true
-    }))
+    
 });
 
 //Build
 gulp.task('build', function(callback) {
   runSequence('delete',
-  [
-    'templates',
-    'scripts',
-    'one',
-    'images',
-    'fonts',
-    'locals'
-  ],
-  callback);
+  ['images', 'fonts', 'locals'], 'one', ['templates','scripts'] ,callback);
 });
 
 //Browser-sync
@@ -96,7 +86,7 @@ gulp.task('browserSync', ['build'], function() {
 
 //Watch Task
 // Watches JS
-gulp.task('watch', ['browserSync', 'one', 'templates', 'scripts'], function() {
+gulp.task('watch', ['browserSync'], function() {
   gulp.watch('js/**/*.js', ['scripts']);
   gulp.watch('css/**/*.styl', ['one']);
   gulp.watch('pages/**/*.jade', ['templates']);
